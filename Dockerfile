@@ -11,10 +11,14 @@ RUN npm install --only=prod && \
     npm cache clean --force
 
 
-RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-oidc.git#master
-RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-api.git#release-4.6.0
-RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-telemetry.git#master
-RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-azure-storage.git#main
+# Install Sunbird custom plugins from JeraldJF GitHub repositories
+# Using same branch/tag names as original, just different owner
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-oidc.git#master
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-api.git#release-4.6.0
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-telemetry.git#master
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-azure-storage.git#main
+
+# Keep these plugins from upstream (already compatible or deprecated)
 RUN npm install https://github.com/NodeBB/nodebb-plugin-write-api.git#master
 
 # Nodebb was not taking the latest version of mentions plugin, That's why we added install command here.

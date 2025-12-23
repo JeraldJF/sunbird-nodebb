@@ -3,7 +3,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 ARG NODE_ENV
-ENV NODE_ENV $NODE_ENV
+ENV NODE_ENV=$NODE_ENV
 
 COPY NodeBB/install/package.json /usr/src/app/package.json
 COPY NodeBB/ /usr/src/app
@@ -44,4 +44,4 @@ EXPOSE 4567
 # ENV admin__password="nodebbAdminPassword00"
 ########################################################
 
-CMD node ./nodebb setup ;  node ./nodebb start
+CMD ["sh", "-c", "node ./nodebb setup ; node ./nodebb start"]

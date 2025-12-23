@@ -57,7 +57,7 @@ jobs:
           docker build --label "commitHash=$(git rev-parse --short HEAD)" \
             --label "nodebbVersion=${{ steps.vars.outputs.nodebb_version }}" \
             --label "buildNumber=${{ github.run_number }}" \
-            -t ${IMAGE_NAME}:${IMAGE_TAG} ./NodeBB
+            -f Dockerfile -t ${IMAGE_NAME}:${IMAGE_TAG} .
 
       - name: Login Docker Registry
         if: ${{ env.BUILD_DOCKER_IMAGE == 'true' }}

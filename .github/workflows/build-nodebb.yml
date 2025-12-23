@@ -91,7 +91,7 @@ jobs:
 
       - name: Create metadata file
         run: |
-          echo "{\"image_name\": \"${{ env.IMAGE_NAME }}\", \"image_tag\": \"${{ steps.vars.outputs.image_tag }}\", \"nodebb_version\": \"${{ steps.vars.outputs.nodebb_version }}\", \"build_number\": \"${{ github.run_number }}\", \"commit_hash\": \"$(git rev-parse --short HEAD)\"}" > metadata.json
+          echo "{\"registry_url\": \"${REGISTRY_URL}\", \"image_name\": \"${IMAGE_NAME}\", \"image_tag\": \"${{ steps.vars.outputs.image_tag }}\", \"nodebb_version\": \"${{ steps.vars.outputs.nodebb_version }}\", \"build_number\": \"${{ github.run_number }}\", \"commit_hash\": \"$(git rev-parse --short HEAD)\"}" > metadata.json
           cat metadata.json
 
       - name: Upload metadata artifact

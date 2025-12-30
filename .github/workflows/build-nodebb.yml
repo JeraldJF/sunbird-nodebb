@@ -13,7 +13,7 @@ env:
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   IMAGE_NAME: nodebb
   # Hardcoded NodeBB version and release tag per request
-  NODEBB_VERSION: 'v4.7.1'
+  NODEBB_VERSION: 'v4.7.2'
   RELEASE_TAG: 'release-8.0.0_RC1'
   BUILD_DOCKER_IMAGE: 'true'
 

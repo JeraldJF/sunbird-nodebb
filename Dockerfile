@@ -27,7 +27,6 @@ RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-telemetry.git#
 RUN npm install https://github.com/JeraldJF/nodebb-plugin-azure-storage.git#main
 
 # Keep these plugins from upstream (already compatible or deprecated)
-RUN npm install https://github.com/NodeBB/nodebb-plugin-write-api.git#master
 
 # Nodebb was not taking the latest version of mentions plugin, That's why we added install command here.
 RUN npm install https://github.com/julianlam/nodebb-plugin-mentions.git#master

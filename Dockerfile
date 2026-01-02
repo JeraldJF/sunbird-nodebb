@@ -22,7 +22,7 @@ RUN /usr/src/app/scripts/verify_plugin_deps.sh
 # Install Sunbird custom plugins from JeraldJF GitHub repositories
 # Using same branch/tag names as original, just different owner
 RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-oidc.git#master
-RUN npm install https://github.com/Sunbird-Ed/nodebb-plugin-sunbird-api.git#release-4.6.0
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-api.git#release-4.6.0
 RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-telemetry.git#master
 RUN npm install https://github.com/JeraldJF/nodebb-plugin-azure-storage.git#main
 

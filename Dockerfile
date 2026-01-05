@@ -32,6 +32,11 @@ RUN npm install https://github.com/NodeBB/nodebb-plugin-write-api.git#master
 # Nodebb was not taking the latest version of mentions plugin, That's why we added install command here.
 RUN npm install https://github.com/julianlam/nodebb-plugin-mentions.git#master
 
+# Build NodeBB to generate required build artifacts (service worker, etc.)
+RUN ./nodebb build
+
+# No entrypoint script needed - use direct NodeBB startup
+
 ENV NODE_ENV=production \
     daemon=false \
     silent=false
@@ -52,4 +57,4 @@ EXPOSE 4567
 # ENV admin__password="nodebbAdminPassword00"
 ########################################################
 
-CMD ["sh", "-c", "node ./nodebb setup ; node ./nodebb start"]
+CMD ["node", "./nodebb", "start"]

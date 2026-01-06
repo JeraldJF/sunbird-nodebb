@@ -16,7 +16,7 @@ RUN npm install --omit=dev --no-audit --no-fund request-promise@4.2.6 connect-mu
 # Install Sunbird custom plugins from JeraldJF GitHub repositories
 # Using same branch/tag names as original, just different owner
 RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-oidc.git#master
-RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-api.git#nodebv-v4
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-api.git#nodebb-v4
 RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-telemetry.git#master
 RUN npm install https://github.com/JeraldJF/nodebb-plugin-azure-storage.git#nodebbv4
 RUN npm install https://github.com/NodeBB/nodebb-plugin-write-api.git#master

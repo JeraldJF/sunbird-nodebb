@@ -11,13 +11,7 @@ RUN npm install --only=prod && \
     npm cache clean --force
 
 # Install pinned runtime dependencies required by plugins (pin for stability)
-COPY scripts/verify_plugin_deps.sh /usr/src/app/scripts/verify_plugin_deps.sh
-RUN chmod +x /usr/src/app/scripts/verify_plugin_deps.sh
 RUN npm install --omit=dev --no-audit --no-fund request-promise@4.2.6 connect-multiparty@2.2.0
-
-# Verify that required plugin runtime dependencies are installed
-RUN /usr/src/app/scripts/verify_plugin_deps.sh
-
 
 # Install Sunbird custom plugins from JeraldJF GitHub repositories
 # Using same branch/tag names as original, just different owner

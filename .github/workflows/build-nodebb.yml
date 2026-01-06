@@ -4,8 +4,6 @@ on:
   push:
     tags:
       - '*'
-    branches:
-      - '**'
 
 env:
   DOCKER_REGISTRY: docker.io

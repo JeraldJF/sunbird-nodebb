@@ -10,8 +10,6 @@ COPY NodeBB/ /usr/src/app
 RUN npm install --only=prod && \
     npm cache clean --force
 
-# Install Sunbird custom plugins from JeraldJF GitHub repositories
-# Using same branch/tag names as original, just different owner
 RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-oidc.git#develop
 RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-api.git#develop
 RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-telemetry.git#develop

@@ -10,10 +10,10 @@ COPY NodeBB/ /usr/src/app
 RUN npm install --only=prod && \
     npm cache clean --force
 
-RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-oidc.git#develop
-RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-api.git#develop
-RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-sunbird-telemetry.git#develop
-RUN npm install https://github.com/Sunbird-Lern/nodebb-plugin-azure-storage.git#develop
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-oidc.git#master
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-api.git#nodebb-v4
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-sunbird-telemetry.git#master
+RUN npm install https://github.com/JeraldJF/nodebb-plugin-azure-storage.git#nodebbv4
 
 # Nodebb was not taking the latest version of mentions plugin, That's why we added install command here.
 RUN npm install https://github.com/julianlam/nodebb-plugin-mentions.git#master
